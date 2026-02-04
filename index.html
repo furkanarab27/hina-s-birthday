@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday  Hinu💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* FLOATING HEARTS & ROSES */
+.heart,.rose{
+    position:fixed;
+    bottom:-30px;
+    pointer-events:none;
+    opacity:0.85;
+    z-index:1;
+    animation:floatUp linear infinite;
+}
+.heart{ color:#ff5fa2; animation-duration:6s; }
+.rose{ color:#ff3b6f; animation-duration:8s; }
+
+@keyframes floatUp{
+    from{transform:translateY(0) rotate(0) scale(1);opacity:1;}
+    to{transform:translateY(-120vh) rotate(360deg) scale(1.3);opacity:0;}
+}
+
+/* PAGE 1 */
+.page1{
+    height:100vh;
+    background:linear-gradient(270deg,#ff4e8a,#ff9a9e,#ff6fb1);
+    background-size:600% 600%;
+    animation:bgMove 8s ease infinite;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.card{
+    background:white;
+    padding:50px;
+    border-radius:35px;
+    text-align:center;
+    box-shadow:0 30px 65px rgba(255,46,99,0.5);
+    animation:pop 1s ease;
+}
+
+@keyframes pop{
+    from{transform:scale(0.6);opacity:0;}
+    to{transform:scale(1);opacity:1;}
+}
+
+.card h1{
+    color:#ff2e63;
+    margin-bottom:25px;
+}
+
+.card button{
+    padding:16px 38px;
+    font-size:20px;
+    border:none;
+    border-radius:50px;
+    background:#ff2e63;
+    color:white;
+    cursor:pointer;
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    50%{transform:scale(1.08);}
+}
+
+/* PAGE 2 */
+.page2{
+    display:none;
+    min-height:100vh;
+    background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+    padding:30px;
+}
+
+.page2 h2,
+.subtitle{
+    text-align:center;
+    color:#ff2e63;
+}
+
+.subtitle{
+    margin-bottom:30px;
+    font-style:italic;
+}
+
+/* GALLERY */
+.gallery{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.photo-card{
+    display:flex;
+    background:white;
+    border-radius:22px;
+    box-shadow:0 20px 35px rgba(0,0,0,0.25);
+    overflow:hidden;
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.8s ease;
+}
+
+.photo-card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.photo-card:nth-child(even){
+    flex-direction:row-reverse;
+}
+
+/* IMAGE FIX */
+.img-box{
+    width:50%;
+    background:#ffe6ec;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:15px;
+}
+
+.img-box img{
+    max-width:100%;
+    max-height:260px;
+    object-fit:contain;
+    border-radius:15px;
+}
+
+.photo-text{
+    width:50%;
+    padding:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#ff2e63;
+    font-size:18px;
+}
+
+/* ABOUT HER */
+.about-card{
+    margin-top:50px;
+    background:white;
+    border-radius:25px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 20px 40px rgba(255,46,99,0.35);
+    animation:pop 1s ease;
+}
+
+.about-card h3{
+    font-family:'Playfair Display',serif;
+    color:#ff2e63;
+    margin-bottom:20px;
+    font-size:28px;
+}
+
+.about-card p{
+    font-family:'Playfair Display',serif;
+    font-size:18px;
+    line-height:1.9;
+    color:#444;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .photo-card{
+        flex-direction:column !important;
+    }
+    .img-box,
+    .photo-text{
+        width:100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page1" id="page1">
+    <div class="card">
+        <h1>🎂 𝓗𝓪𝓹𝓹𝔂 𝓑𝓲𝓻𝓽𝓱𝓭𝓪𝔂 𝓗𝓲𝓷𝓷𝓾 💖</h1>
+        <button onclick="openGallery()">Happy Birthday 🎉</button>
+    </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page2" id="page2">
+    <h2>Beautiful Memories 💕</h2>
+    <p class="subtitle">Celebrating you and your beautiful moments 🎂✨</p>
+
+    <div class="gallery">
+
+        <!-- PHOTOS 1–10 -->
+        <div class="photo-card"><div class="img-box"><img src="hina1.jpeg"></div><div class="photo-text">• 𝓑𝓮𝓪𝓾𝓽𝓲𝓯𝓾𝓵 𝓼𝓶𝓲𝓵𝓮 🌸 </div></div>
+        <div class="photo-card"><div class="img-box"><img src="hina2.jpeg"></div><div class="photo-text">• 𝓢𝔀𝓮𝓮𝓽 𝓶𝓸𝓶𝓮𝓷𝓽𝓼 💖 </div></div>
+        <div class="photo-card"><div class="img-box"><img src="hina3.jpeg"></div><div class="photo-text">• 𝓖𝓸𝓵𝓭𝓮𝓷 𝓶𝓮𝓶𝓸𝓻𝓲𝓮𝓼 ✨ </div></div>
+        <div class="photo-card"><div class="img-box"><img src="hina4.jpeg"></div><div class="photo-text">• 𝓕𝓸𝓻𝓮𝓿𝓮𝓻 𝓼𝓹𝓮𝓬𝓲𝓪𝓵 🌹 </div></div>
+        <div class="photo-card"><div class="img-box"><img src="hina5.jpeg"></div><div class="photo-text">• 𝓒𝓾𝓽𝓮 𝓿𝓲𝓫𝓮𝓼 💕 </div></div>
+        <div class="photo-card"><div class="img-box"><img src="hina6.jpeg"></div><div class="photo-text">• 𝓛𝓸𝓿𝓮𝓵𝔂 𝓶𝓸𝓶𝓮𝓷𝓽𝓼 🌷 </div></div>
+        <div class="photo-card"><div class="img-box"><img src="hina7.jpeg"></div><div class="photo-text">• 𝓗𝓪𝓹𝓹𝓲𝓷𝓮𝓼𝓼 𝓮𝓿𝓮𝓻𝔂𝔀𝓱𝓮𝓻𝓮 😊 </div></div>
+        <div class="photo-card"><div class="img-box"><img src="hina8.jpeg"></div><div class="photo-text">• 𝓟𝓾𝓻𝓮 𝓳𝓸𝔂 💫 </div></div>
+        <div class="photo-card"><div class="img-box"><img src="hina9.jpeg"></div><div class="photo-text">• 𝓤𝓷𝓯𝓸𝓻𝓰𝓮𝓽𝓽𝓪𝓫𝓵𝓮 💞 </div></div>
+        <div class="photo-card"><div class="img-box"><img src="hina10.jpeg"></div><div class="photo-text">• 𝓐𝓵𝔀𝓪𝔂𝓼 𝓼𝓹𝓮𝓬𝓲𝓪𝓵 💖 </div></div>
+
+        <!-- ABOUT HER -->
+        <div class="about-card">
+            <h3>𝓐𝓫𝓸𝓾𝓽 𝓗𝓮𝓻 💫</h3>
+            <p>
+                𝓘 𝓱𝓪𝓿𝓮𝓷’𝓽 𝓴𝓷𝓸𝔀𝓷 𝓗𝓲𝓷𝓾 𝓯𝓸𝓻 𝓪 𝓿𝓮𝓻𝔂 𝓵𝓸𝓷𝓰 𝓽𝓲𝓶𝓮,
+𝓫𝓾𝓽 𝓮𝓿𝓮𝓻 𝓼𝓲𝓷𝓬𝓮 𝓘 𝓰𝓸𝓽 𝓽𝓸 𝓴𝓷𝓸𝔀 𝓱𝓮𝓻,
+𝓼𝓱𝓮 𝓱𝓪𝓼 𝓫𝓮𝓬𝓸𝓶𝓮 𝓶𝔂 𝓯𝓪𝓿𝓸𝓾𝓻𝓲𝓽𝓮 𝓯𝓻𝓲𝓮𝓷𝓭.
+
+𝓣𝓪𝓵𝓴𝓲𝓷𝓰 𝓽𝓸 𝓱𝓮𝓻 𝓰𝓲𝓿𝓮𝓼 𝓶𝓮 𝓶𝓸𝓽𝓲𝓿𝓪𝓽𝓲𝓸𝓷,
+𝓪𝓷𝓭 𝓽𝓱𝓲𝓷𝓰𝓼 𝓼𝓽𝓪𝓻𝓽 𝓽𝓸 𝓯𝓮𝓮𝓵 𝓶𝓸𝓻𝓮 𝓹𝓸𝓼𝓲𝓽𝓲𝓿𝓮.
+𝓦𝓲𝓽𝓱𝓸𝓾𝓽 𝓮𝓿𝓮𝓷 𝓻𝓮𝓪𝓵𝓲𝔃𝓲𝓷𝓰 𝓲𝓽,
+𝓼𝓱𝓮 𝓼𝓸𝓶𝓮𝓽𝓲𝓶𝓮𝓼 𝓫𝓮𝓬𝓸𝓶𝓮𝓼 𝓪 𝓻𝓮𝓪𝓵𝓵𝔂 𝓼𝓽𝓻𝓸𝓷𝓰 𝓼𝓾𝓹𝓹𝓸𝓻𝓽.<br><br>
+
+𝓣𝓱𝓲𝓼 𝓹𝓪𝓰𝓮 𝓲𝓼 𝓪 𝓼𝓶𝓪𝓵𝓵 𝓰𝓮𝓼𝓽𝓾𝓻𝓮
+𝓸𝓯 𝓻𝓮𝓼𝓹𝓮𝓬𝓽 𝓪𝓷𝓭 𝓪𝓹𝓹𝓻𝓮𝓬𝓲𝓪𝓽𝓲𝓸𝓷 𝓯𝓸𝓻 𝓱𝓮𝓻.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<!-- BACKGROUND MUSIC -->
+<audio id="bgMusic" loop>
+    <source src="hina.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function openGallery(){
+    document.getElementById("page1").style.display="none";
+    document.getElementById("page2").style.display="block";
+
+    const music=document.getElementById("bgMusic");
+    music.volume=0.4;
+    music.play();
+
+    document.querySelectorAll(".photo-card").forEach((card,index)=>{
+        setTimeout(()=>card.classList.add("show"),index*250);
+    });
+}
+
+/* FLOATING EFFECT */
+setInterval(()=>{
+    const el=document.createElement("div");
+    el.className=Math.random()>0.5?"heart":"rose";
+    el.innerHTML=el.className==="heart"?"💗":"🌹";
+    el.style.left=Math.random()*100+"vw";
+    el.style.fontSize=(Math.random()*20+15)+"px";
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),8000);
+},400);
+</script>
+
+</body>
+</html>
